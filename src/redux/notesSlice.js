@@ -4,7 +4,7 @@ const initialState = {
   notes: [
     {
       id: "1",
-      title: "Task 1",
+      title: "Task 1: bla bla bla",
       body: "bla bla bla",
       tags: ["Tag1", "Tag2"],
     },
@@ -20,6 +20,48 @@ const initialState = {
       body: "bla bla bla",
       tags: ["Tag1"],
     },
+    {
+      id: "4",
+      title: "Task 1: bla bla bla",
+      body: "bla bla bla",
+      tags: ["Tag1", "Tag2"],
+    },
+    {
+      id: "5",
+      title: "Task 2",
+      body: "bla bla bla",
+      tags: ["Tag1", "Tag2", "Tag3"],
+    },
+    {
+      id: "6",
+      title: "Task 3",
+      body: "bla bla bla",
+      tags: ["Tag1"],
+    },
+    {
+      id: "7",
+      title: "Task 1: bla bla bla",
+      body: "bla bla bla",
+      tags: ["Tag1", "Tag2"],
+    },
+    {
+      id: "8",
+      title: "Task 2",
+      body: "bla bla bla",
+      tags: ["Tag1", "Tag2", "Tag3"],
+    },
+    {
+      id: "9",
+      title: "Task 3",
+      body: "bla bla bla",
+      tags: ["Tag1"],
+    },
+    {
+      id: "10",
+      title: "Task 3",
+      body: "bla bla bla",
+      tags: ["Tag1"],
+    },
   ],
 }
 
@@ -28,8 +70,14 @@ const notesSlice = createSlice({
   initialState,
   reducers: {
     createNote: (state, action) => state.notes.push({id: nanoid(), ...action.payload}),
-    editNote: (state, action) => state.notes = state.notes.map((note) => note.id === action.payload.id ? action.payload : note),
-    deleteNote: (state, action) => state.notes.filter(note => note.id !== action.payload),
+    editNote: (state, action) => {
+      state.notes = state.notes.map((note) =>
+        note.id === action.payload.id ? action.payload : note
+      );
+    },
+    deleteNote: (state, action) => {
+      state.notes = state.notes.filter(note => note.id !== action.payload);
+    },
   }
 })
 
