@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import TasksList from '../tasks'
+import NotesList from '../notesList'
 
 function FilterTasks() {
-  const allTags = [...new Set(TasksList.flatMap(task => task.tags))];
+  const allTags = [...new Set(NotesList.flatMap(note => note.tags))];
 
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState("");

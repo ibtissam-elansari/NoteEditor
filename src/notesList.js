@@ -1,4 +1,4 @@
-const TasksList = [
+const NotesList = [
     {
       id: "1",
       title: "Task 1",
@@ -19,4 +19,4 @@ const TasksList = [
     },
   ];
 
-export default TasksList;
+export default NotesList;
